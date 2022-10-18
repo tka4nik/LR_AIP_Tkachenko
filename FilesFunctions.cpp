@@ -16,6 +16,7 @@ std::vector<char> data::load_vector_char(const std::string &path_file) {
     return vec;
 }
 
+
 std::vector<int> data::load_vector_int(const std::string &path_file) {
     std::vector<int> vec;
     std::ifstream file(path_file);
