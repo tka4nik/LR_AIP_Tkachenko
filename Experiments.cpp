@@ -448,90 +448,102 @@ void experiments::PopBExperimentsWorker::run() {
 
 void experiments::PopBExperimentsWorker::char_popb(std::vector<char> &vec, std::list<char> &list, std::deque<char> &deq) {
     std::cout << "Testing char popb with vector..\n";
+    int size = vec.size();
     m_tlog.reset_start();
     while(!vec.empty()) {
         vec.pop_back();
     }
-    m_tlog.log_duration(m_file, vec.size(), "char", "vector");
+    m_tlog.log_duration(m_file, size, "char", "vector");
 
     std::cout << "Testing char popb with list..\n";
+    size = list.size();
     m_tlog.reset_start();
     while (!list.empty()) {
         list.pop_back();
     }
-    m_tlog.log_duration(m_file, list.size(), "char", "list");
+    m_tlog.log_duration(m_file, size, "char", "list");
 
     std::cout << "Testing char popb with deque..\n";
+    size = deq.size();
     m_tlog.reset_start();
     while (!deq.empty()) {
         deq.pop_back();
-    }    m_tlog.log_duration(m_file, deq.size(), "char", "deque");
+    }    m_tlog.log_duration(m_file, size, "char", "deque");
 }
 
 void experiments::PopBExperimentsWorker::int_popb(std::vector<int> &vec, std::list<int> &list, std::deque<int> &deq) {
     std::cout << "Testing int popb with vector..\n";
+    int size = vec.size();
     m_tlog.reset_start();
     while(!vec.empty()) {
         vec.pop_back();
     }
-    m_tlog.log_duration(m_file, vec.size(), "int", "vector");
+    m_tlog.log_duration(m_file, size, "int", "vector");
 
     std::cout << "Testing int popb with list..\n";
+    size = list.size();
     m_tlog.reset_start();
     while (!list.empty()) {
         list.pop_back();
     }
-    m_tlog.log_duration(m_file, list.size(), "int", "list");
+    m_tlog.log_duration(m_file, size, "int", "list");
 
     std::cout << "Testing int popb with deque..\n";
+    size = deq.size();
     m_tlog.reset_start();
     while (!deq.empty()) {
         deq.pop_back();
-    }    m_tlog.log_duration(m_file, deq.size(), "int", "deque");
+    }    m_tlog.log_duration(m_file, size, "int", "deque");
 }
 
 void experiments::PopBExperimentsWorker::double_popb(std::vector<double> &vec, std::list<double> &list, std::deque<double> &deq) {
     std::cout << "Testing double popb with vector..\n";
+    int size = vec.size();
     m_tlog.reset_start();
     while(!vec.empty()) {
         vec.pop_back();
     }
-    m_tlog.log_duration(m_file, vec.size(), "double", "vector");
+    m_tlog.log_duration(m_file, size, "double", "vector");
 
     std::cout << "Testing double popb with list..\n";
+    size = list.size();
     m_tlog.reset_start();
     while (!list.empty()) {
         list.pop_back();
     }
-    m_tlog.log_duration(m_file, list.size(), "double", "list");
+    m_tlog.log_duration(m_file, size, "double", "list");
 
     std::cout << "Testing double popb with deque..\n";
+    size = deq.size();
     m_tlog.reset_start();
     while (!deq.empty()) {
         deq.pop_back();
-    }    m_tlog.log_duration(m_file, deq.size(), "double", "deque");
+    }    m_tlog.log_duration(m_file, size, "double", "deque");
 }
 
 void experiments::PopBExperimentsWorker::string_popb(std::vector<std::string> &vec, std::list<std::string> &list, std::deque<std::string> &deq) {
     std::cout << "Testing string popb with vector..\n";
+    int size = vec.size();
     m_tlog.reset_start();
     while(!vec.empty()) {
         vec.pop_back();
     }
-    m_tlog.log_duration(m_file, vec.size(), "string", "vector");
+    m_tlog.log_duration(m_file, size, "string", "vector");
 
     std::cout << "Testing char string with list..\n";
+    size = list.size();
     m_tlog.reset_start();
     while (!list.empty()) {
         list.pop_back();
     }
-    m_tlog.log_duration(m_file, list.size(), "string", "list");
+    m_tlog.log_duration(m_file, size, "string", "list");
 
     std::cout << "Testing char string with deque..\n";
+    size = deq.size();
     m_tlog.reset_start();
     while (!deq.empty()) {
         deq.pop_back();
-    }    m_tlog.log_duration(m_file, deq.size(), "string", "deque");
+    }    m_tlog.log_duration(m_file, size, "string", "deque");
 }
 ////////////////////////////////////////////////////////////////////////////
 
