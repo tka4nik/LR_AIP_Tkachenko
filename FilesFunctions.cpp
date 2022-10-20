@@ -1,4 +1,6 @@
 #include "FilesFunctions.h"
+#include <string>
+
 
 std::vector<char> data::load_vector_char(const std::string &path_file) {
     std::vector<char> vec;
@@ -57,8 +59,7 @@ std::vector<std::string> data::load_vector_string(const std::string &path_file) 
         return vec;
     }
     std::string tmp;
-    while (!file.eof()) {
-        file >> tmp;
+    while (std::getline(file, tmp, '\n')) {
         vec.push_back(tmp);
     }
     file.close();
@@ -121,8 +122,7 @@ std::list<std::string> data::load_list_string(const std::string &path_file) {
         return list;
     }
     std::string tmp;
-    while (!file.eof()) {
-        file >> tmp;
+    while (std::getline(file, tmp, '\n')) {
         list.push_back(tmp);
     }
     file.close();
@@ -185,8 +185,7 @@ std::deque<std::string> data::load_deque_string(const std::string &path_file) {
         return deque;
     }
     std::string tmp;
-    while (!file.eof()) {
-        file >> tmp;
+    while (std::getline(file, tmp, '\n')) {
         deque.push_back(tmp);
     }
     file.close();
