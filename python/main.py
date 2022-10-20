@@ -7,29 +7,35 @@ class FileGenerator:
     def __init__(self):
         self.fileqnt = 0
 
-    def generate_text(self, length, n):
-        filename = "text/char_" + str(n) + "_" + str(length) + ".txt"
+    def generate_char(self, n):
+        filename = "char/char_" + str(n) + ".txt"
         with open(filename, "w") as s:
-            for i in range(1, n * 100000):
-                tmp = ''.join(
-                    random.choices(string.ascii_uppercase + string.digits + string.ascii_lowercase + string.punctuation,
-                                   k=length * random.randint(19, 39) + 1)) + "\n"
+            for _ in range(1, n * 100000):
+                tmp = ''.join(random.choices(string.ascii_uppercase + string.digits + string.ascii_lowercase + string.punctuation, k=1)) + "\n"
                 s.write(tmp)
             self.fileqnt += 1
 
     def generate_int(self, n):
         filename = "int/int_" + str(n) + ".txt"
         with open(filename, "w") as s:
-            for i in range(1, n * 100000):
+            for _ in range(1, n * 100000):
                 tmp = ''.join(str(random.randint(-100000, 100000))) + "\n"
                 s.write(tmp)
             self.fileqnt += 1
 
-    def generate_float(self, n):
-        filename = "float/float_" + str(n) + ".txt"
+    def generate_double(self, n):
+        filename = "double/double_" + str(n) + ".txt"
         with open(filename, "w") as s:
-            for i in range(1, n * 100000):
+            for _ in range(1, n * 100000):
                 tmp = str(random.uniform(-100000, 100000)) + "\n"
+                s.write(tmp)
+            self.fileqnt += 1
+
+    def generate_string(self, n):
+        filename = "string/string_" + str(n) + ".txt"
+        with open(filename, "w") as s:
+            for _ in range(1, n * 100000):
+                tmp = ''.join(random.choices(string.ascii_uppercase + string.digits + string.ascii_lowercase + ' ', k=random.randint(20, 40))) + "\n"
                 s.write(tmp)
             self.fileqnt += 1
 
@@ -37,8 +43,8 @@ class FileGenerator:
 if __name__ == "__main__":
     FG = FileGenerator()
     for i in range(1, 11):
-        FG.generate_text(0, i)
-        FG.generate_text(1, i)
+        FG.generate_char(i)
+        FG.generate_string(i)
         FG.generate_int(i)
-        FG.generate_float(i)
+        FG.generate_double(i)
     print("File quantity: " + str(FG.fileqnt))
