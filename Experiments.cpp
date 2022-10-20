@@ -191,7 +191,7 @@ void experiments::SortExperimentsWorker::char_sort(std::vector<char> &vec, std::
 
     std::cout << "Testing char sort with deque..\n";
     m_tlog.reset_start();
-    std::find(deq.begin(), deq.end(), ' '); // Whitespace is not included into the generated symbols
+    std::sort(deq.begin(), deq.end()); // Whitespace is not included into the generated symbols
     m_tlog.log_duration(m_file, deq.size(), "char", "deque");
 }
 
@@ -208,7 +208,7 @@ void experiments::SortExperimentsWorker::int_sort(std::vector<int> &vec, std::li
 
     std::cout << "Testing int sort with deque..\n";
     m_tlog.reset_start();
-    std::find(deq.begin(), deq.end(), ' '); // Whitespace is not included into the generated symbols
+    std::sort(deq.begin(), deq.end()); // Whitespace is not included into the generated symbols
     m_tlog.log_duration(m_file, deq.size(), "int", "deque");
 }
 
@@ -225,7 +225,7 @@ void experiments::SortExperimentsWorker::double_sort(std::vector<double> &vec, s
 
     std::cout << "Testing double sort with deque..\n";
     m_tlog.reset_start();
-    std::find(deq.begin(), deq.end(), ' '); // Whitespace is not included into the generated symbols
+    std::sort(deq.begin(), deq.end()); // Whitespace is not included into the generated symbols
     m_tlog.log_duration(m_file, deq.size(), "double", "deque");
 }
 
@@ -242,7 +242,7 @@ void experiments::SortExperimentsWorker::string_sort(std::vector<std::string> &v
 
     std::cout << "Testing string sort with deque..\n";
     m_tlog.reset_start();
-    std::find(deq.begin(), deq.end(), ' '); // Whitespace is not included into the generated symbols
+    std::sort(deq.begin(), deq.end()); // Whitespace is not included into the generated symbols
     m_tlog.log_duration(m_file, deq.size(), "string", "deque");
 }
 ////////////////////////////////////////////////////////////////////////////
@@ -298,90 +298,102 @@ void experiments::PopFExperimentsWorker::run() {
 
 void experiments::PopFExperimentsWorker::char_popf(std::vector<char> &vec, std::list<char> &list, std::deque<char> &deq) {
     std::cout << "Testing char popf with vector..\n";
+    int size = vec.size();
     m_tlog.reset_start();
     while(!vec.empty()) {
         vec.erase(vec.begin());
     }
-    m_tlog.log_duration(m_file, vec.size(), "char", "vector");
+    m_tlog.log_duration(m_file, size, "char", "vector");
 
     std::cout << "Testing char popf with list..\n";
+    size = list.size();
     m_tlog.reset_start();
     while (!list.empty()) {
         list.pop_front();
     }
-    m_tlog.log_duration(m_file, list.size(), "char", "list");
+    m_tlog.log_duration(m_file, size, "char", "list");
 
     std::cout << "Testing char popf with deque..\n";
+    size = deq.size();
     m_tlog.reset_start();
     while (!deq.empty()) {
         deq.pop_front();
-    }    m_tlog.log_duration(m_file, deq.size(), "char", "deque");
+    }    m_tlog.log_duration(m_file, size, "char", "deque");
 }
 
 void experiments::PopFExperimentsWorker::int_popf(std::vector<int> &vec, std::list<int> &list, std::deque<int> &deq) {
     std::cout << "Testing int popf with vector..\n";
+    int size = vec.size();
     m_tlog.reset_start();
     while(!vec.empty()) {
         vec.erase(vec.begin());
     }
-    m_tlog.log_duration(m_file, vec.size(), "int", "vector");
+    m_tlog.log_duration(m_file, size, "int", "vector");
 
     std::cout << "Testing int popf with list..\n";
+    size = list.size();
     m_tlog.reset_start();
     while (!list.empty()) {
         list.pop_front();
     }
-    m_tlog.log_duration(m_file, list.size(), "int", "list");
+    m_tlog.log_duration(m_file, size, "int", "list");
 
     std::cout << "Testing int popf with deque..\n";
+    size = deq.size();
     m_tlog.reset_start();
     while (!deq.empty()) {
         deq.pop_front();
-    }    m_tlog.log_duration(m_file, deq.size(), "int", "deque");
+    }    m_tlog.log_duration(m_file, size, "int", "deque");
 }
 
 void experiments::PopFExperimentsWorker::double_popf(std::vector<double> &vec, std::list<double> &list, std::deque<double> &deq) {
     std::cout << "Testing double popf with vector..\n";
+    int size = vec.size();
     m_tlog.reset_start();
     while(!vec.empty()) {
         vec.erase(vec.begin());
     }
-    m_tlog.log_duration(m_file, vec.size(), "double", "vector");
+    m_tlog.log_duration(m_file, size, "double", "vector");
 
     std::cout << "Testing double popf with list..\n";
+    size = list.size();
     m_tlog.reset_start();
     while (!list.empty()) {
         list.pop_front();
     }
-    m_tlog.log_duration(m_file, list.size(), "double", "list");
+    m_tlog.log_duration(m_file, size, "double", "list");
 
     std::cout << "Testing double popf with deque..\n";
+    size = deq.size();
     m_tlog.reset_start();
     while (!deq.empty()) {
         deq.pop_front();
-    }    m_tlog.log_duration(m_file, deq.size(), "double", "deque");
+    }    m_tlog.log_duration(m_file, size, "double", "deque");
 }
 
 void experiments::PopFExperimentsWorker::string_popf(std::vector<std::string> &vec, std::list<std::string> &list, std::deque<std::string> &deq) {
     std::cout << "Testing string popf with vector..\n";
+    int size = vec.size();
     m_tlog.reset_start();
     while(!vec.empty()) {
         vec.erase(vec.begin());
     }
-    m_tlog.log_duration(m_file, vec.size(), "string", "vector");
+    m_tlog.log_duration(m_file, size, "string", "vector");
 
     std::cout << "Testing string popf with list..\n";
+    size = list.size();
     m_tlog.reset_start();
     while (!list.empty()) {
         list.pop_front();
     }
-    m_tlog.log_duration(m_file, list.size(), "string", "list");
+    m_tlog.log_duration(m_file, size, "string", "list");
 
     std::cout << "Testing string popf with deque..\n";
+    size = deq.size();
     m_tlog.reset_start();
     while (!deq.empty()) {
         deq.pop_front();
-    }    m_tlog.log_duration(m_file, deq.size(), "string", "deque");
+    }    m_tlog.log_duration(m_file, size, "string", "deque");
 }
 ////////////////////////////////////////////////////////////////////////////
 
