@@ -3,9 +3,6 @@
 #include <iostream>
 #include "Experiments.h"
 
-class Temp {
-    Temp() {};
-};
 
 int main() {
     experiments::FindExperimentsWorker *find = new experiments::FindExperimentsWorker;
