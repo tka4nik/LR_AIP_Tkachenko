@@ -8,6 +8,10 @@ experiments::PushFExperimentsWorker::PushFExperimentsWorker() {
     m_tlog = time_log::TimeLogger();
 }
 
+experiments::PushFExperimentsWorker::~PushFExperimentsWorker() {
+    m_file.close();
+}
+
 void experiments::PushFExperimentsWorker::run() {
     std::cout << "Testing PushF with containers..\n";
 
@@ -192,6 +196,10 @@ void experiments::PushFExperimentsWorker::string_pushf(std::vector<std::string> 
 experiments::PushBExperimentsWorker::PushBExperimentsWorker() {
     m_file.open("../pushb_out.csv");
     m_tlog = time_log::TimeLogger();
+}
+
+experiments::PushBExperimentsWorker::~PushBExperimentsWorker() {
+    m_file.close();
 }
 
 void experiments::PushBExperimentsWorker::run() {

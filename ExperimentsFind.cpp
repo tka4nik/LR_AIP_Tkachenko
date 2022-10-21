@@ -8,6 +8,10 @@ experiments::FindExperimentsWorker::FindExperimentsWorker() {
     m_tlog = time_log::TimeLogger();
 }
 
+experiments::FindExperimentsWorker::~FindExperimentsWorker() {
+    m_file.close();
+}
+
 void experiments::FindExperimentsWorker::run() {
     std::cout << "Testing Find with containers..\n";
 

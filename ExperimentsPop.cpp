@@ -8,6 +8,10 @@ experiments::PopFExperimentsWorker::PopFExperimentsWorker() {
     m_tlog = time_log::TimeLogger();
 }
 
+experiments::PopFExperimentsWorker::~PopFExperimentsWorker() {
+    m_file.close();
+}
+
 void experiments::PopFExperimentsWorker::run() {
     std::cout << "Testing Find with containers..\n";
 
@@ -156,6 +160,10 @@ void experiments::PopFExperimentsWorker::string_popf(std::vector<std::string> &v
 experiments::PopBExperimentsWorker::PopBExperimentsWorker() {
     m_file.open("../popb_out.csv");
     m_tlog = time_log::TimeLogger();
+}
+
+experiments::PopBExperimentsWorker::~PopBExperimentsWorker()  {
+    m_file.close();
 }
 
 void experiments::PopBExperimentsWorker::run() {

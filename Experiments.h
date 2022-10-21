@@ -13,6 +13,7 @@ namespace experiments {
     public:
         FindExperimentsWorker();
         void run();
+        ~FindExperimentsWorker();
     private:
         std::ofstream m_file;
         time_log::TimeLogger m_tlog;
@@ -25,6 +26,7 @@ namespace experiments {
     class SortExperimentsWorker {
     public:
         SortExperimentsWorker();
+        ~SortExperimentsWorker();
         void run();
     private:
         std::ofstream m_file;
@@ -38,6 +40,7 @@ namespace experiments {
     class PopFExperimentsWorker {
     public:
         PopFExperimentsWorker();
+        ~PopFExperimentsWorker();
         void run();
     private:
         std::ofstream m_file;
@@ -51,6 +54,7 @@ namespace experiments {
     class PopBExperimentsWorker {
     public:
         PopBExperimentsWorker();
+        ~PopBExperimentsWorker();
         void run();
     private:
         std::ofstream m_file;
@@ -64,6 +68,7 @@ namespace experiments {
     class PushFExperimentsWorker {
     public:
         PushFExperimentsWorker();
+        ~PushFExperimentsWorker();
         void run();
     private:
         std::ofstream m_file;
@@ -77,6 +82,7 @@ namespace experiments {
     class PushBExperimentsWorker {
     public:
         PushBExperimentsWorker();
+        ~PushBExperimentsWorker();
         void run();
     private:
         std::ofstream m_file;

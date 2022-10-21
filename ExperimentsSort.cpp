@@ -8,6 +8,10 @@ experiments::SortExperimentsWorker::SortExperimentsWorker() {
     m_tlog = time_log::TimeLogger();
 }
 
+experiments::SortExperimentsWorker::~SortExperimentsWorker() {
+    m_file.close();
+}
+
 void experiments::SortExperimentsWorker::run() {
     std::cout << "Testing PopF with containers..\n";
 
